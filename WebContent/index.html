@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+<!--     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"/> -->
+    
+    <style type="text/css">
+		.logo{position:absolute;bottom:400px;right:40px;}
+		.inputCss{width:180px;height:24px;line-height:24px;vertical-align:middle;margin-left:12px;border-radius:2.5px;border:2px solid #009a44;}
+		.inputCss:focus{background-color:yellow;}
+		.submit{float:left;background-color:#006a44;width:180px;height:30px;line-height:30px;margin-top:30px;margin-left:94px;cursor:pointer;color:white;border-radius:2.5px;font-weight:bold;font-size:20px;text-align:center;}
+		.v1{position:absolute;right:20px;bottom:50px;width:400px;height:200px;overflow:auto;}
+		.v2{float:left;width:80px;text-align:right;height:28px;line-height:28px;font-weight:bold;font-size:20px;}
+		.v3{float:left;width:380px;}
+		.v4{float:left;margin-top:16px;width:380px;}
+		.v5{float:right;margin-top:16px;width:280px;}
+		a {text-decoration: none;}
+		.tip{font-size:12px;color:red;display:none;}
+	</style>
+	
+	<script type="text/javascript" src="jquery/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#username").blur(function(){  //控件失去焦点时，执行
+			if($("#username").val()==""){
+				$("#tip1").attr("style","display:inline");
+			//	$("#username").focus();
+			}
+			else $("#tip1").attr("style","display:none");
+		});//endUsernameBlur()
+		
+		$("#password").blur(function(){  //控件失去焦点时，执行
+			if($("#password").val()==""){
+				$("#tip2").attr("style","display:inline");
+			//	$("#password").focus();
+			}
+			else $("#tip2").attr("style","display:none");
+		});//endUsernameBlur()
+		
+		
+		});//endready()
+		
+		/***********************************************************************
+	**提交数据函数
+	************************************************************************/	
+		function Submit(){
+			if($("#username").val()==""){
+					$("#tip1").attr("style","display:inline");
+				}
+			else if($("#password").val()==""){
+					$("#tip2").attr("style","display:inline");
+				}
+			else{
+				var datas = "username="+$("#username").val()+"&password="+$("#password").val();
+				$.post("servlet/LoginServlet",datas,function(data,status){
+					if(data.statuscode==1)
+					{
+						window.location.replace(data.parameter);
+					}
+					else if(data.statuscode==0)
+						alert(data.parameter);
+					else alert("unknown error");
+				},"json");
+			}
+				
+		}
+	/************************************************************/
+	/**
+	* 匿名登录
+	*/
+	function AnonymouseLogin(){
+		var datas = "username=username&password=password";
+		$.post("servlet/LoginServlet",datas,function(data,status){
+			if(data.statuscode==1)
+			{
+				window.location.replace(data.parameter);
+			}
+			else if(data.statuscode==0)
+				alert(data.parameter);
+			else alert("unknown error");
+		},"json");
+	}
+	</script>
+			
+	
+</head>
+<body>
+	<img src="images/background.png" width="100%" height="100%" style="z-index:-100;position:absolute;left:0;top:0">
+	<div class="total">
+	    <div class="logo"><img src="images/3.png" class="image3Css"/><img src="images/title.png" class="image2Css"/></div>
+		<div class="v1">
+			<div class="v3"><span class="v2">用户名</span><input type="text" id="username" class="inputCss"/><span class="tip" id="tip1">*请输入用户名</span><span class="tip" id="tip3">*用户名错误</span></div>
+			<div class="v4"><span class="v2">密码</span><input type="password" id="password" class="inputCss"/><span class="tip" id="tip2">*请输入密码</span><span class="tip" id="tip4">*密码错误</span></div>
+			<div class="v5"><a href="javascript:void(0);">注册</a>&nbsp;|&nbsp;<a href="javascript:void(0);" onclick='AnonymouseLogin();'>游客</a></div>
+			<div onclick="Submit()" class="submit">登 陆</div>
+			
+		</div>
+	</div>
+</body>
+</html>

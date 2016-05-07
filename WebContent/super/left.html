@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/left.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		var permission = getCookie("_PERMISSION");
+		if(permission!=0){
+			$(".manager").attr("style","display:none");
+		}
+	};
+	function getCookie(c_name)
+	{
+	if (document.cookie.length>0)
+	  {
+	  c_start=document.cookie.indexOf(c_name + "=")
+	  if (c_start!=-1)
+	    { 
+	    c_start=c_start + c_name.length+1 
+	    c_end=document.cookie.indexOf(";",c_start)
+	    if (c_end==-1) c_end=document.cookie.length
+	    return unescape(document.cookie.substring(c_start,c_end))
+	    } 
+	  }
+	return ""
+	}
+</script>
+
+</head>
+
+<body style="background:#f0f9fd;">
+	<div class="lefttop"><span></span>系统管理</div>
+    
+    <dl class="leftmenu">
+    
+    <dd class="manager"><div class="title"><span><img src="images/leftico04.png" /></span>人员管理</div>
+    <ul class="menuson">
+        <li><cite></cite><a href="peopleManage.html" target="rightFrame">已有用户管理</a><i></i></li>
+        <li><cite></cite><a href="addPerson.html" target="rightFrame">新增用户</a><i></i></li>
+    </ul>
+    
+    </dd>   
+        
+    <dd class="manager">
+    <div class="title">
+    <span><img src="images/leftico01.png" /></span>信息管理
+    </div>
+    	<ul class="menuson">
+        <li><cite></cite><a href="ProductInfo.html?type=boxID" target="rightFrame">商品信息管理</a><i></i></li>
+        <li id="LogisticsInfo"><cite></cite><a href="LogisticsInfo.html?type=id&data=" target="rightFrame">物流信息管理</a><i></i></li>
+        <li id="StoreInfo"><cite></cite><a href="StoreInfo.html?type=selStoreIds" target="rightFrame">仓储信息管理</a><i></i></li>
+        <li id="SalesInfo"><cite></cite><a href="SalesInfo.html?type=selpName" target="rightFrame">消费信息管理</a><i></i></li>
+        </ul>    
+    </dd>
+        
+    
+    <dd>
+    <div class="title">
+    <span><img src="images/leftico02.png" /></span>产品溯源
+    </div>
+    <ul class="menuson">
+        <li><cite></cite><a href="antiFake.html" target="rightFrame">防伪查询</a><i></i></li>
+        <li><cite></cite><a href="trace.html" target="rightFrame">溯源查询</a><i></i></li>
+<!--         <li><cite></cite><a href="#" target="rightFrame">档案列表显示</a><i></i></li> -->
+        </ul>     
+    </dd> 
+    
+    
+    <dd class="manager"><div class="title"><span><img src="images/leftico03.png" /></span>数据分析</div>
+    <ul class="menuson">
+        <li><cite></cite><a href="address.html" target="rightFrame">查看详情</a></li>
+<!--       <li><cite></cite><a href="#" target="rightFrame">按地区查看</a></li>
+        <li><cite></cite><a href="#" target="rightFrame">按销量查看</a></li>
+        <li><cite></cite><a href="#" target="rightFrame">其他</a></li>
+         --> 
+    </ul>    
+    </dd>     
+    </dl>
+ 
+</body>
+</html>

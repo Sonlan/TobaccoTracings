@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>personalInfo.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="css/personalInfo.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="js/addPersonal.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  
+  <body>
+    <div id="content" class="div_content">  
+				
+		<div class="all">     		
+			<div class="modifyDiv"><label for="ps1" class="modifyLabel">用户名</label><input type="text" name="password" id="ps1" class="modifyInput"><span class="tip" id="tip1">*密码错误</span></div>		
+			<div class="modifyDiv"><label for="ps2" class="modifyLabel">密码</label><input type="text" name="newPassword" id="ps2" class="modifyInput"></div>	
+			<div class="modifyDiv"><label for="ps3" class="modifyLabel">权限等级</label><input type="text" name="newPassword" id="ps3" class="modifyInput"><span class="tip" id="tip">*新密码不一致</span></div>
+			<div class="modifyDiv"><label for="ps4" class="modifyLabel">监管范围</label><input type="text" name="password" id="ps4" class="modifyInput"><span class="tip" id="tip1">*密码错误</span></div>
+			<div class="modifyDiv"><label for="ps5" class="modifyLabel">责任人姓名</label><input type="text" name="password" id="ps5" class="modifyInput"><span class="tip" id="tip1">*密码错误</span></div>
+			<div class="modifyDiv"><label for="ps6" class="modifyLabel">邮箱</label><input type="text" name="password" id="ps6" class="modifyInput"><span class="tip" id="tip1">*密码错误</span></div>
+			<div class="modifyDiv"><label for="ps7" class="modifyLabel">联系方式</label><input type="text" name="password" id="ps7" class="modifyInput"><span class="tip" id="tip1">*密码错误</span></div>
+			<div class="modifyDiv"><label for="ps8" class="modifyLabel">备注</label><input type="text" name="password" id="ps8" class="modifyInput"><span class="tip" id="tip1">*密码错误</span></div>
+			<div class="modifyReset" id="modifyReset">关闭</div><div class="modifySubmit" id="submit">添加</div>
+		</div>
+	</div>
+  </body>
+</html>

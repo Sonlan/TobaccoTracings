@@ -1,0 +1,53 @@
+*{font-size:9pt;border:0;margin:0;padding:0;}
+body{font-family:'Î¢ÈíÑÅºÚ'; margin:0 auto;min-width:980px;}
+
+ul{display:block;margin:0;padding:0;list-style:none;}
+li{display:block;margin:0;padding:0;list-style: none;}
+img{border:0;}
+dl,dt,dd,span{margin:0;padding:0;display:block;}
+a,a:focus{text-decoration:none;color:#000;outline:none;blr:expression(this.onFocus=this.blur());}
+a:hover{color:#00a4ac;text-decoration:none;}
+table{border-collapse:collapse;border-spacing: 0;}
+cite{font-style:normal;}
+h2{font-weight:normal;}
+
+
+.place{height:40px; background:url(../images/righttop.gif) repeat-x;} 
+.place span{line-height:40px; font-weight:bold;float:left; margin-left:12px;}
+.placeul li{float:left; line-height:40px; padding-left:7px; padding-right:12px; background:url(../images/rlist.gif) no-repeat right;}
+.placeul li:last-child{background:none;}
+.InfoInput {background:url(../images/righttop.gif) repeat-x;height:40px;margin:10px 0;padding:10px 0;}
+.InfoInput p{text-align:center;height:20px;}
+.InfoInput p lable{font-size:12pt;margin-right:10px;}
+#ids {background-color:#FFFFFF;height:20px;border:1px solid #E9967A;}
+#query {margin-left:10px;background-color:#F5DEB3;height:20px;padding:5px;}
+#query:focus{background-color:#F4A460;}
+
+.tools{clear:both; height:35px; margin:8px 10px;}
+.toolbar{float:left;}
+.toolbar li{background-color:#F0FFFF; line-height:33px; height:33px; border:solid 1px #d3dbde; float:left; padding:2px 8px; margin-right:5px;border-radius: 3px; cursor:pointer;}
+.toolbar li span{float:left; margin-left:10px; margin-right:5px; margin-top:5px;}
+.toolbar1{float:right;}
+.toolbar1 li{ line-height:33px; height:33px; border:solid 1px #d3dbde; float:left; padding-right:10px; margin-left:5px;border-radius: 3px; behavior:url(js/pie.htc);}
+.toolbar1 li span{float:left; margin-left:10px; margin-right:5px; margin-top:5px;}
+
+.graph{margin:10px auto;width:1200px;verflow:auto;zoom:1;}
+.container{width: 550px; height: 400px; margin: 10px auto;overflow:auto;zoom:1;float:left;display:none;}
+.container1{height:400px;overflow:auto;zoom:1;margin: 10px auto;display:none}
+
+/*tip*/
+.tip{width:485px; height:260px; position:absolute;top:10%; left:30%;background:#fcfdfd;box-shadow:1px 8px 10px 1px #9b9b9b;border-radius:1px; display:none; z-index:111111;}
+.tiptop{height:40px; line-height:40px; background:url(../images/tcbg.gif)  repeat-x; cursor:pointer;}
+.tiptop span{font-size:14px; font-weight:bold; color:#fff;float:left; text-indent:20px;}
+.tiptop a{display:block; background:url(../images/close.png) no-repeat; width:22px; height:22px;float:right;margin-right:7px; margin-top:10px; cursor:pointer;}
+.tiptop a:hover{background:url(../images/close1.png) no-repeat;}
+.tipinfo{padding-top:30px;margin-left:65px; height:95px;}
+.tipinfo span{width:95px; height:95px;float:left;}
+.tipright{float:left;padding-top:15px; padding-left:10px;}
+.tipright p{font-size:14px; font-weight:bold; line-height:35px;}
+.tipright cite{color:#858686;}
+.tipbtn{margin-top:25px; margin-left:125px;}
+.sure ,.cancel{width:96px; height:35px; line-height:35px; color:#fff; background:url(../images/btnbg1.png) repeat-x; font-size:14px; font-weight:bold;border-radius: 3px; cursor:pointer;}
+.cancel{background:url(../images/btnbg2.png) repeat-x;color:#000;font-weight:normal;}
+.newOptionText{border-style: solid; border-width: 1px;}
+
