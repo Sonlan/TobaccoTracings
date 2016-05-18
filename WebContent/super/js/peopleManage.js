@@ -1,5 +1,4 @@
 document.write("<script type='text/javascript' src='js/jquery.js'></script>");
-document.write("<link href='css/smartMenu.css' rel='stylesheet' type='text/css' />");
 $(document).ready(function(){
 	var permission = "";  //权限等级
 	var scopes = "";  //监管范围
@@ -136,7 +135,7 @@ $(document).ready(function(){
         return Length;
     }
 	function updateTable(pageNum){//输入为页数，从0开始
-		$.post("../servlet/PeopleManageServlet","permission="+permission+"&scopes="+scopes,function(data,stadus){
+		$.post("../user/query","permission="+permission+"&scopes="+scopes,function(data,stadus){
 			var headHtml = "<tr>"+
 	        "<th><input name='' type='checkbox' value='' checked='checked'/></th>"+
 	        "<th>ID<i class='sort'><img src='images/px.gif' /></i></th>"+
@@ -173,7 +172,7 @@ $(document).ready(function(){
 								       "<td>"+data.parameter[i].name+"</td>"+
 								       "<td>"+data.parameter[i].permission+"</td>"+
 								       "<td>"+data.parameter[i].scopes+"</td>"+
-								       "<td><a href='personalInfo.html?id="+data.parameter[i].id+"' class='tablelink' target='_blank'>查看</a>     <a href='../servlet/DeleteServlet?id="+data.parameter[i].id+"&type=administrators' class='tablelink' onclick='if(confirm(\"你确定要删除这些数据?\")) return ture;else return false;'>删除</a></td>"+
+								       "<td><a href='personalInfo.html?id="+data.parameter[i].id+"' class='tablelink' target='_blank'>查看</a>     <a href='../manage/delete?id="+data.parameter[i].id+"&type=administrators' class='tablelink' onclick='if(confirm(\"你确定要删除这些数据?\")) return ture;else return false;'>删除</a></td>"+
 								       "</tr>";
 				}
 				$(".pagin").attr("style","display:block");
@@ -195,33 +194,4 @@ $(document).ready(function(){
 	$(".pagepre").click(function (){
 		updateTable(currentPage-1);
 	});
-	//输入权限等级和监管范围
-//	$("#permissionSelect").bind("mousedown",function(e){
-//		 if (e.which == 3) {
-//
-//		        var    opertionn = {
-//		                name: "",
-//		                offsetX: 2,
-//		                offsetY: 2,
-//		                textLimit: 10,
-//		                beforeShow: $.noop,
-//		                afterShow: $.noop
-//		            };
-//
-//		            var imageMenuData = [
-//		    [ {
-//		        text: "添加",
-//		        func: function () {
-//		            alert(e.target.innerHTML);
-//		        }
-//		    }, {
-//		        text: "删除",
-//		        func: function () {
-//		            $(this).css("background-color", "#beceeb");
-//		        }
-//		    }]
-//		    ]; 
-//		            $(this).smartMenu(imageMenuData, opertionn); 
-//		        }
-//	});
 });

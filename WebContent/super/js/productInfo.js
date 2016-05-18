@@ -162,7 +162,7 @@ $(document).ready(function(){
         return Length;
     }
 	function updateTable(pageNum){//输入为页数，从0开始
-		$.post("../servlet/ProductInfoServlet","type="+type+"&id="+$("#"+type).val(),function(data,stadus){
+		$.post("../product/query","type="+type+"&id="+$("#"+type).val(),function(data,stadus){
 			//取出数据，供其他函数调用
 			datas = data;
 			var headHtml="";
@@ -270,7 +270,7 @@ $(document).ready(function(){
 				if(type=="boxID"){id=datas.parameter[i].boxID;}
 				else if(type=="caseID"){id=datas.parameter[i].caseID;}
 				else if(type=="productID"){id=datas.parameter[i].id;}
-				$.post("../servlet/DeleteServlet","id="+id+"&type="+type,function(data,status){
+				$.post("../manage/delete","id="+id+"&type="+type,function(data,status){
 					//删除这一行
 					$("tr[id='"+i+"']").remove();
 				},"json");		
@@ -377,7 +377,7 @@ $(document).ready(function(){
 			}
 			alert(sendData);
 			if(sendData!=""){//addNew用于区别update和add动作
-				$.post("../servlet/UpdateProductInfoServlet",sendData+"&addNew="+addNew,function(data,stadus){
+				$.post("../product/update",sendData+"&addNew="+addNew,function(data,stadus){
 					if(data.statuscode==0){//有错误
 						alert("修改失败，请检查数据输入");
 					}

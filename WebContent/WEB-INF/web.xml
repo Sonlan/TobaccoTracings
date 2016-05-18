@@ -129,79 +129,79 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/servlet/LoginServlet</url-pattern>
+    <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>SuperExit</servlet-name>
-    <url-pattern>/servlet/SuperExit</url-pattern>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ReadPersonalInfoServlet</servlet-name>
-    <url-pattern>/servlet/ReadPersonalInfoServlet</url-pattern>
+    <url-pattern>/user/aboutSelf</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>PeopleManageServlet</servlet-name>
-    <url-pattern>/servlet/PeopleManageServlet</url-pattern>
+    <url-pattern>/user/query</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DeleteServlet</servlet-name>
-    <url-pattern>/servlet/DeleteServlet</url-pattern>
+    <url-pattern>/manage/delete</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UpdatePersonalInfoServlet</servlet-name>
-    <url-pattern>/servlet/UpdatePersonalInfoServlet</url-pattern>
+    <url-pattern>/user/update</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AddNewPersonServlet</servlet-name>
-    <url-pattern>/servlet/AddNewPersonServlet</url-pattern>
+    <url-pattern>/user/add</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ProductInfoServlet</servlet-name>
-    <url-pattern>/servlet/ProductInfoServlet</url-pattern>
+    <url-pattern>/product/query</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UpdateProductInfoServlet</servlet-name>
-    <url-pattern>/servlet/UpdateProductInfoServlet</url-pattern>
+    <url-pattern>/product/update</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>LogisticsInfoServlet</servlet-name>
-    <url-pattern>/servlet/LogisticsInfoServlet</url-pattern>
+    <url-pattern>/logistics/query</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UpdateLogisticsInfoServlet</servlet-name>
-    <url-pattern>/servlet/UpdateLogisticsInfoServlet</url-pattern>
+    <url-pattern>/logistics/update</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UpdateStoreInfoServlet</servlet-name>
-    <url-pattern>/servlet/UpdateStoreInfoServlet</url-pattern>
+    <url-pattern>/storeInfo/update</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>storeInfoServlet</servlet-name>
-    <url-pattern>/servlet/storeInfoServlet</url-pattern>
+    <url-pattern>/storeInfo/query</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>TestExtUtils</servlet-name>
-    <url-pattern>/servlet/TestExtUtils</url-pattern>
+    <url-pattern>/remote/ext</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>AntiFakeServlet</servlet-name>
-    <url-pattern>/servlet/AntiFakeServlet</url-pattern>
+    <url-pattern>/manage/antiFake</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>DataAnalysisServlet</servlet-name>
-    <url-pattern>/servlet/DataAnalysisServlet</url-pattern>
+    <url-pattern>/manage/dataAnalysis</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>salesInfoServlet</servlet-name>
-    <url-pattern>/servlet/salesInfoServlet</url-pattern>
+    <url-pattern>/salesInfo/query</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>UpdateSalesInfoServlet</servlet-name>
-    <url-pattern>/servlet/UpdateSalesInfoServlet</url-pattern>
+    <url-pattern>/salesInfo/update</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>GetConfigParams</servlet-name>
-    <url-pattern>/servlet/GetConfigParams</url-pattern>
+    <url-pattern>/manage/configInit</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>LoginFilter</filter-name>

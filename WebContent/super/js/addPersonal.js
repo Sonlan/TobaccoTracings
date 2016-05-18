@@ -21,7 +21,7 @@ $(document).ready(function(){
 			
 			var datas ="&userName="+userName+"&password="+password+"&permission="+permission+"&scopes="+scopes+"&name="+name+
 						"&email="+email+"&phoneNumber="+phoneNumber+"&remark="+remark;
-			$.post("../servlet/AddNewPersonServlet",datas,function(data,status){
+			$.post("../user/add",datas,function(data,status){
 				if(data.parameter==true)
 					alert("添加成功!");
 				else

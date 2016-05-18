@@ -9,7 +9,7 @@ $(document).ready(function(){
 		id = $("#ids").val();
 		var key = id.toUpperCase().substring(0,1); //截取首字符
 		var html = "";
-		$.post("../servlet/AntiFakeServlet","id="+id,function(data,status){
+		$.post("../manage/antiFake","id="+id,function(data,status){
 			if(data.statuscode==0){//有误
 				alert(data.parameter);  //警示，重新输入查询码
 			}else if(data.statuscode==1){//正常

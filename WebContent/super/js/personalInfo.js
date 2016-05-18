@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var id = location.href.split("=")[1];
 	var permission = "1";
 	//像servlet提交请求，根据返回数据，读取个人信息显示在桌面上
-	$.post("../servlet/ReadPersonalInfoServlet","id="+id,function(data,status){
+	$.post("../user/aboutSelf","id="+id,function(data,status){
 		if(data.statuscode==1)
 		{	
 			id = data.parameter.id;
@@ -40,7 +40,7 @@ $(document).ready(function(){
 			
 			var datas ="id="+id+"&userName="+userName+"&password="+password+"&permission="+permission+"&scopes="+scopes+"&name="+name+
 						"&email="+email+"&phoneNumber="+phoneNumber+"&remark="+remark;
-			$.post("../servlet/UpdatePersonalInfoServlet",datas,function(data,status){
+			$.post("../user/update",datas,function(data,status){
 				if(data.parameter==true)
 					alert("修改成功!");
 				else

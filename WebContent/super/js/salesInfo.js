@@ -8,10 +8,9 @@ $(document).ready(function(){
 	var tempi = "";  //用于传递表格中第几列
 	
 	//插件初始化
-	 $.post("../servlet/GetConfigParams","cmd=proType",function(data,stadus){
+	 $.post("../manage/configInit","cmd=proType",function(data,stadus){
 		 var options = "";
 		 var i = 0;
-		 alert(data.parameter);
 		 $("#selpName").trigger("liszt:updated");
 		 var protypes = data.parameter.split("&")[0].split(",");
 		 for(i=0;i<protypes.length;i++){
@@ -27,7 +26,9 @@ $(document).ready(function(){
 		 }
 		 $("#selRegion").append(options);
 		 
-		 $(".chzn-select").chosen({no_results_text: "没有匹配结果",search_contains: true});
+		 $("#selpName").chosen({no_results_text: "没有匹配结果",search_contains: true});
+		 $("#selRegion").chosen({no_results_text: "没有匹配结果",search_contains: true});
+		 //$(".chzn-select").chosen({no_results_text: "没有匹配结果",search_contains: true});
 	 },"json");
 	 
 	//初始化表格全部
@@ -98,7 +99,7 @@ $(document).ready(function(){
         return Length;
     }
 	function updateTable(pageNum){//输入为页数，从0开始
-		$.post("../servlet/salesInfoServlet","type="+type+"&id="+$("#"+type).val(),function(data,stadus){
+		$.post("../salesInfo/query","type="+type+"&id="+$("#"+type).val(),function(data,stadus){
 			//取出数据，供其他函数调用
 			datas = data;
 			var headHtml="";
@@ -166,7 +167,7 @@ $(document).ready(function(){
 			var type = data.split("=")[2];
 			var i = data.split("&")[0].split("=")[1];
 			if(datas!=null){
-				$.post("../servlet/DeleteServlet","id="+datas.parameter[i].id+"&type="+type,function(data,status){
+				$.post("../manage/delete","id="+datas.parameter[i].id+"&type="+type,function(data,status){
 					//删除这一行
 					$("tr[id='"+i+"']").remove();
 				},"json");		
@@ -203,7 +204,7 @@ $(document).ready(function(){
 			+"&time="+$("#editTime").val()+"&num="+$("#editNum").val();
 	
 			if(sendData!=""){//addNew用于区别update和add动作
-				$.post("../servlet/UpdateSalesInfoServlet",sendData+"&addNew="+addNew,function(data,stadus){
+				$.post("../salesInfo/update",sendData+"&addNew="+addNew,function(data,stadus){
 					if(data.statuscode==0){//有错误
 						alert("修改失败，请检查数据输入");
 					}

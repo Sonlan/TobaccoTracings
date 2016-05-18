@@ -77,7 +77,7 @@ $(document).ready(function(){
         return Length;
     }
 	function updateTable(pageNum){//输入为页数，从0开始
-		$.post("../servlet/storeInfoServlet","type="+type+"&id="+$("#"+type).val(),function(data,stadus){
+		$.post("../storeInfo/query","type="+type+"&id="+$("#"+type).val(),function(data,stadus){
 			//取出数据，供其他函数调用
 			datas = data;
 			var headHtml="";
@@ -151,7 +151,7 @@ $(document).ready(function(){
 			var type = data.split("=")[2];
 			var i = data.split("&")[0].split("=")[1];
 			if(datas!=null){
-				$.post("../servlet/DeleteServlet","id="+datas.parameter[i].warehouseID+"&type="+type,function(data,status){
+				$.post("../manage/delete","id="+datas.parameter[i].warehouseID+"&type="+type,function(data,status){
 					//删除这一行
 					$("tr[id='"+i+"']").remove();
 				},"json");		
@@ -189,7 +189,7 @@ $(document).ready(function(){
 			+"&outDate="+$("#editOutDates").val()+"&pb="+$("#editPbs").val()+"&location="+$("#editLocations").val()+"&state="+$("#editStates").val()+"&remark="+$("#editRemarks").val();
 	
 			if(sendData!=""){//addNew用于区别update和add动作
-				$.post("../servlet/UpdateStoreInfoServlet",sendData+"&addNew="+addNew,function(data,stadus){
+				$.post("../storeInfo/update",sendData+"&addNew="+addNew,function(data,stadus){
 					if(data.statuscode==0){//有错误
 						alert("修改失败，请检查数据输入");
 					}

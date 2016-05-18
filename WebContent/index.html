@@ -52,7 +52,7 @@
 				}
 			else{
 				var datas = "username="+$("#username").val()+"&password="+$("#password").val();
-				$.post("servlet/LoginServlet",datas,function(data,status){
+				$.post("login",datas,function(data,status){
 					if(data.statuscode==1)
 					{
 						window.location.replace(data.parameter);
@@ -70,7 +70,7 @@
 	*/
 	function AnonymouseLogin(){
 		var datas = "username=username&password=password";
-		$.post("servlet/LoginServlet",datas,function(data,status){
+		$.post("login",datas,function(data,status){
 			if(data.statuscode==1)
 			{
 				window.location.replace(data.parameter);

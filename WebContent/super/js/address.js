@@ -1,14 +1,12 @@
 $(document).ready(function(){
-	 var ADDR = ["北京","天津","重庆","上海","河北","山西","辽宁","吉林","黑龙江","江苏","浙江","安徽","福建","江西","山东","河南","湖北","湖南","广东","海南省","四川","贵州","云南","陕西","甘肃","青海","台湾","内蒙古","广西","西藏","宁夏","新疆","香港","澳门"];
 	 var deleteAble = false;  //是否删除选中项的标志量
 	 var addType = 0;  //用于增添下拉菜单选项时区分是哪个下拉菜单，0：type 1:region
 	 var type="";//产品种类
 	 var region="";//地理区域
 	 //插件初始化
-	 $.post("../servlet/GetConfigParams","cmd=proType",function(data,stadus){
+	 $.post("../manage/configInit","cmd=proType",function(data,stadus){
 		 var options = "";
 		 var i = 0;
-		 alert(data.parameter);
 		 $("#typeSelect").trigger("liszt:updated");
 		 var protypes = data.parameter.split("&")[0].split(",");
 		 for(i=0;i<protypes.length;i++){
@@ -62,7 +60,7 @@ $(document).ready(function(){
 			 }else region="";
 		 }else region="";
 		 if(region!="" || type!=""){  //一项非空则开启查询
-			 $.post("../servlet/DataAnalysisServlet","type="+type+"&region="+region,function(data,stadus){
+			 $.post("../manage/dataAnalysis","type="+type+"&region="+region,function(data,stadus){
 				 if(type!=""){
 					 if(region!=""){
 						 var i =0;
