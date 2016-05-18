@@ -86,7 +86,7 @@ public class SalesDbUtils implements MyDBUtils<Sales> {
 			String sql = "delete from "+TABLE_NAME+" where id = ?";
 			conn = DBFactory.getConnection();
 			pre = (PreparedStatement) conn.prepareStatement(sql);
-			pre.setInt(1, (Integer) id);
+			pre.setInt(1,Integer.parseInt((String) id));
 			pre.execute();
 		} catch (Exception e) {
 			return false;

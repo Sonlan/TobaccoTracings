@@ -100,6 +100,11 @@ public class DeleteServlet extends HttpServlet {
 			dbUtils.delete(id);
 			response.getWriter().write(JsonUtils.statusResponse(1, "OK"));
 			//response.sendRedirect(PATH+"super/StoreInfo.html?type="+type);
+		}else if(type.equals("selpName")||type.equals("selRegion")){
+			MyDBUtils<StoreInfo> dbUtils = DBFactory.getDBFactory(6);
+			dbUtils.delete(id);
+			response.getWriter().write(JsonUtils.statusResponse(1, "OK"));
+			//response.sendRedirect(PATH+"super/StoreInfo.html?type="+type);
 		}
 		return;
 	}

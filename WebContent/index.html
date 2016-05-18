@@ -5,7 +5,7 @@
 <!--     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0"/> -->
     
     <style type="text/css">
-		.logo{position:absolute;bottom:400px;right:40px;}
+		.logo{position:absolute;top:89px;right:262px;}
 		.inputCss{width:180px;height:24px;line-height:24px;vertical-align:middle;margin-left:12px;border-radius:2.5px;border:2px solid #009a44;}
 		.inputCss:focus{background-color:yellow;}
 		.submit{float:left;background-color:#006a44;width:180px;height:30px;line-height:30px;margin-top:30px;margin-left:94px;cursor:pointer;color:white;border-radius:2.5px;font-weight:bold;font-size:20px;text-align:center;}
@@ -58,7 +58,7 @@
 						window.location.replace(data.parameter);
 					}
 					else if(data.statuscode==0)
-						alert(data.parameter);
+						alert("用户不存在或密码错误!");
 					else alert("unknown error");
 				},"json");
 			}
