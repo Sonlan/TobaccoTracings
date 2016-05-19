@@ -72,7 +72,7 @@ $(document).ready(function(){
 							 i++;
 						 }
 						 $(".container1").attr("style","display:block");
-						 lineChart(type+'全国销量统计曲线图',time,nums);
+						 lineChart(type+region+'地区销量统计曲线图',time,nums);
 					 }else{//按种类查询，不同地区销量分布
 						 var i =0;
 						 var regions = new Array();

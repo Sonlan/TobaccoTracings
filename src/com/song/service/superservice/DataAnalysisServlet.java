@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
-
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -137,18 +138,22 @@ public class DataAnalysisServlet extends HttpServlet {
 	 * @param pName  品名
 	 * @return （时间，销量）
 	 */
-	private HashMap<String , Integer> queryByTime(String region,String pName){
+	private Map<String , Integer> queryByTime(String region,String pName){
 //		Date date = new Date();
 		MyDBUtils<Sales> dbUtils = DBFactory.getDBFactory(6);
 		List<Sales> list = new ArrayList<Sales>();
 		if("中国".equals(region.trim())) list = dbUtils.query("select * from sales where pName='"+pName+"'");
 		else list = dbUtils.query("select * from sales where region='"+region+"' and pName='"+pName+"'");  //某地相应产品的所有销售记录
-		HashMap<String, Integer> result = new HashMap<String, Integer>();
+		Date date = new Date();
+		int year = date.getYear()+1900;
+		Map<String, Integer> result = new LinkedHashMap<>();
+		for(int i=0;i<12;i++){
+			result.put(year+"-"+(i+1), 0);
+		}
 		if(null != list){
 			for(int i=0;i<list.size();i++){//依次遍历取得的数据，统计各地区销售额
 				if(result.containsKey(list.get(i).getTime()))
 					result.put(list.get(i).getTime(), list.get(i).getNum()+result.get(list.get(i).getTime()));
-				else result.put(list.get(i).getTime(), list.get(i).getNum());
 			}
 			return result;
 		}else return null;
