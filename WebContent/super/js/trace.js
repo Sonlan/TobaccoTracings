@@ -6,7 +6,7 @@ $(document).ready(function(){
 	$("#query").click(function(){
 		id = $("#ids").val();
 		if(id!=""){//输入不为空
-			$.post("../manage/antiFake","id="+id,function(data,stadus){
+			$.post("../logistics/query","id="+id,function(data,stadus){
 				if(data.statuscode==0){//有误
 					alert(data.parameter);  //警示，重新输入查询码
 				}else if(data.statuscode==1){//正常
